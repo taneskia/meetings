@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   meeting_scheduler_api: "http://localhost:8080/api/meetings",
-  users_api: "http://localhost:8081/api/employees"
+  users_api: "http://localhost:8081/api/employees",
+  rooms_api: "http://localhost:8080/api/rooms",
 };
 
 /*

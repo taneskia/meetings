@@ -5,7 +5,8 @@ import { RoomsComponent } from './components/rooms/rooms.component';
 
 const routes: Routes = [
   { path: 'rooms', component: RoomsComponent },
-  { path: 'rooms/:id', component: RoomDetailsComponent }
+  { path: 'rooms/:id', component: RoomDetailsComponent },
+  { path: '**', redirectTo: "rooms" }
 ];
 
 @NgModule({

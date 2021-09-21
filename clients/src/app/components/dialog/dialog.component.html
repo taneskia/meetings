@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Meeting participants</h1>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+    <mat-list role="list">
+        <mat-list-item *ngFor="let d of data" role="listitem">{{d.name}}</mat-list-item>
+        
+    </mat-list>      
+</div>
+<mat-divider></mat-divider>

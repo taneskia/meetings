@@ -42,9 +42,13 @@ public class MeetingService {
 
         TimeSlot timeSlot = new TimeSlot(meetingDto.getStartDate(), meetingDto.getEndDate());
 
-        Meeting meeting = new Meeting(room, timeSlot, personList);
+        Meeting meeting = new Meeting(timeSlot, personList);
 
         meetingRepository.save(meeting);
+
+        room.addMeeting(meeting);
+
+        roomRepository.save(room);
 
         return meeting;
     }

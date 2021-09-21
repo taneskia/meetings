@@ -10,6 +10,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RoomsComponent } from './components/rooms/rooms.component';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
+import { MatListModule } from '@angular/material/list';
+import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +23,7 @@ import { RoomDetailsComponent } from './components/room-details/room-details.com
     ToolbarComponent,
     RoomsComponent,
     RoomDetailsComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +31,12 @@ import { RoomDetailsComponent } from './components/room-details/room-details.com
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    NgbModule
+    NgbModule,
+    MatListModule,
+    HttpClientModule,
+    MatTableModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

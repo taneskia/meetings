@@ -1,1 +1,10 @@
-<p>rooms works!</p>
+<mat-selection-list>
+    <div mat-subheader>Rooms</div>
+    <mat-divider></mat-divider>
+    <mat-list-item *ngFor="let room of rooms">
+      <mat-icon mat-list-icon>meeting_room</mat-icon>
+      <div mat-line><a href="#" [routerLink]="'/rooms/' + room.id.id">Room {{room.number}}</a></div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-selection-list>
+  

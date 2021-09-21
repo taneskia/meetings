@@ -15,10 +15,6 @@ import java.util.List;
 @Getter
 public class Meeting extends BaseEntity<MeetingId> {
 
-    @ManyToOne
-    @JoinColumn(name = "room_")
-    private Room room;
-
     @Embedded
     private TimeSlot timeSlot;
 
@@ -27,14 +23,9 @@ public class Meeting extends BaseEntity<MeetingId> {
 
     protected Meeting() { super(MeetingId.randomId(MeetingId.class)); }
 
-    public Meeting(Room room, TimeSlot timeSlot, List<Person> personList) {
+    public Meeting(TimeSlot timeSlot, List<Person> personList) {
         super(MeetingId.randomId(MeetingId.class));
-        this.room = room;
         this.timeSlot = timeSlot;
-
-        if(personList.size() > room.getCapacity().getValue())
-            throw new InvalidValueException();
-
         this.personList = personList;
     }
 }

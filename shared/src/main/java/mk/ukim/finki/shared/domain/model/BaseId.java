@@ -11,7 +11,6 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Getter
-@Embeddable
 @MappedSuperclass
 public class BaseId implements Serializable {
 

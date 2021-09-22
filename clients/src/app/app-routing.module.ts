@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NewMeetingComponent } from './components/new-meeting/new-meeting.component';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
 import { RoomsComponent } from './components/rooms/rooms.component';
 

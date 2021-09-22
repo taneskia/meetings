@@ -1,6 +1,7 @@
 package mk.ukim.finki.meetingscheduler.domain.controller;
 
 import lombok.AllArgsConstructor;
+import mk.ukim.finki.meetingscheduler.domain.model.Meeting;
 import mk.ukim.finki.meetingscheduler.domain.model.Room;
 import mk.ukim.finki.meetingscheduler.domain.service.RoomService;
 import org.springframework.web.bind.annotation.*;

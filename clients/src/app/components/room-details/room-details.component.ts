@@ -42,15 +42,7 @@ export class RoomDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     var roomId = this.route.snapshot.params["id"]
-    this.roomService.getRoom(roomId).subscribe(
-      (room) => {
-        this.room = room;
-        room.meetings.forEach(meeting => {
-          this.dataSource.push({ participants: meeting.personList, start: new Date(meeting.timeSlot.startDateTime), end: new Date(meeting.timeSlot.endDateTime) });
-          this.table.renderRows();
-        });
-      }
-    )
+    this.refreshData(roomId);
   }
 
   showParticipants(participants: Person[]) {
@@ -62,6 +54,23 @@ export class RoomDetailsComponent implements OnInit {
   addMeeting() {
     this.dialog.open(NewMeetingComponent, {
       data: this.room.id.id
+    })
+    .afterClosed()
+    .subscribe(() => {
+      this.refreshData(this.room.id.id);
     });
+  }
+
+  private refreshData(roomId: string) {
+    this.roomService.getRoom(roomId).subscribe(
+      (room) => {
+        this.room = room;
+        this.dataSource = [];
+        room.meetings.forEach(meeting => {
+          this.dataSource.push({ participants: meeting.personList, start: new Date(meeting.timeSlot.startDateTime), end: new Date(meeting.timeSlot.endDateTime) });
+          this.table.renderRows();
+        });
+      }
+    )
   }
 }

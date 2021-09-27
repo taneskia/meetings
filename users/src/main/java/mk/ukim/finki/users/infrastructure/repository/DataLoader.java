@@ -14,11 +14,16 @@ import org.springframework.stereotype.Component;
 public class DataLoader implements ApplicationRunner {
 
     private final EmployeeService employeeService;
+    private final EmployeeRepository employeeRepository;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        this.employeeService.createEmployee(new EmployeeDto("", "Andrej", "IT"));
-        this.employeeService.createEmployee(new EmployeeDto("", "Stefan", "HR"));
-        this.employeeService.createEmployee(new EmployeeDto("", "David", "PR"));
-        this.employeeService.createEmployee(new EmployeeDto("", "Blagoja", "CR"));}
+        if (this.employeeRepository.count() == 0) {
+            this.employeeService.createEmployee(new EmployeeDto("", "Andrej", "IT"));
+            this.employeeService.createEmployee(new EmployeeDto("", "Stefan", "HR"));
+            this.employeeService.createEmployee(new EmployeeDto("", "David", "PR"));
+            this.employeeService.createEmployee(new EmployeeDto("", "Blagoja", "CR"));
+        }
+    }
+
 }

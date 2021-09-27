@@ -10,12 +10,15 @@ services:
 
     environment:
       - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_USER=user
-      - MYSQL_PASSWORD=password
-      - MYSQL_DATABASE=meeting-scheduler
+
+    entrypoint:
+      sh -c "
+      echo 'CREATE DATABASE IF NOT EXISTS `meeting-scheduler`; CREATE DATABASE IF NOT EXISTS users;' > /docker-entrypoint-initdb.d/init.sql;
+      /usr/local/bin/docker-entrypoint.sh --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+      "
 
     ports:
-      - 33060:3306
+      - "33060:3306"
 
   zookeeper:
     image: docker.io/bitnami/zookeeper:3.7

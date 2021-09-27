@@ -23,14 +23,11 @@ public class DataLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        for (int i = 1; i <= 5; i++) {
-            Room room = new Room(i, new Capacity(10));
-            roomRepository.save(room);
+        if(roomRepository.count() == 0) {
+            for (int i = 1; i <= 5; i++) {
+                Room room = new Room(i, new Capacity(10));
+                roomRepository.save(room);
+            }
         }
-
-//        this.personRepository.save(new Person("Andrej"));
-//        this.personRepository.save(new Person("Stefan"));
-//        this.personRepository.save(new Person("David"));
-//        this.personRepository.save(new Person("Blagoja"));
     }
 }

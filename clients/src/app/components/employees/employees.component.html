@@ -1,0 +1,9 @@
+<mat-selection-list>
+    <div mat-subheader>Employees</div>
+    <mat-divider></mat-divider>
+    <mat-list-item *ngFor="let employee of employees |async">
+      <mat-icon mat-list-icon>person</mat-icon>
+      <div mat-line>{{employee.name}}</div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-selection-list>

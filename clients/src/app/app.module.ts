@@ -29,6 +29,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
+import { EmployeesComponent } from './components/employees/employees.component';
 
 
 
@@ -40,6 +41,7 @@ import { MatSelectModule } from '@angular/material/select';
     RoomDetailsComponent,
     DialogComponent,
     NewMeetingComponent,
+    EmployeesComponent,
   ],
   imports: [
     BrowserModule,

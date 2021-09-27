@@ -7,6 +7,7 @@ export const environment = {
   meeting_api: "http://localhost:8080/api/meetings",
   people_api: "http://localhost:8080/api/people",
   rooms_api: "http://localhost:8080/api/rooms",
+  employees_api: "http://localhost:8081/api/employees"
 };
 
 /*

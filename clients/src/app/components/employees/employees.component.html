@@ -1,9 +1,18 @@
-<mat-selection-list>
-    <div mat-subheader>Employees</div>
-    <mat-divider></mat-divider>
-    <mat-list-item *ngFor="let employee of employees |async">
-      <mat-icon mat-list-icon>person</mat-icon>
-      <div mat-line>{{employee.name}}</div>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-  </mat-selection-list>
+<button mat-button (click)="addEmployee()">
+  <mat-icon>add</mat-icon>
+  Add employee
+</button>
+<div mat-subheader>Employees</div>
+<mat-divider></mat-divider>
+<div class="row">
+  <div class="col-sm-3">
+    <mat-selection-list>
+      <mat-list-item *ngFor="let employee of employees">
+        <mat-icon mat-list-icon>person</mat-icon>
+        <div mat-line>{{employee.name}}</div>
+        <button mat-button (click)="deleteEmployee(employee.id.id)"><mat-icon>delete</mat-icon></button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-selection-list>
+  </div>
+</div>

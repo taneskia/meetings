@@ -30,6 +30,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { EmployeesComponent } from './components/employees/employees.component';
+import { NewEmployeeComponent } from './components/new-employee/new-employee.component';
 
 
 
@@ -42,6 +43,7 @@ import { EmployeesComponent } from './components/employees/employees.component';
     DialogComponent,
     NewMeetingComponent,
     EmployeesComponent,
+    NewEmployeeComponent,
   ],
   imports: [
     BrowserModule,

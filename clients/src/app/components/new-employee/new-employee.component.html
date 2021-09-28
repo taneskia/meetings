@@ -1,0 +1,25 @@
+<form (ngSubmit)="addEmployee()">
+
+    <mat-form-field appearance="standard">
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="name">
+        <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-divider></mat-divider>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Department</mat-label>
+        <mat-select [formControl]="department">
+            <mat-select-trigger>
+                {{department.value ? department.value : ''}}
+            </mat-select-trigger>
+            <mat-option *ngFor="let department of departments" [value]="department">{{department}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-divider></mat-divider>
+
+    <button type="submit" mat-button mat-dialog-close>Add</button>
+
+</form>

@@ -62,6 +62,9 @@ public class MeetingService {
     }
 
     public void employeeRemoved(String employeeId) {
+        List<Meeting> meetings =  meetingRepository.findAll();
+        meetings.forEach(m -> m.getPersonList().removeIf(p -> p.getId().getId().equals(employeeId)));
+        meetingRepository.saveAll(meetings);
         personRepository.deleteById(new PersonId(employeeId));
     }
 }

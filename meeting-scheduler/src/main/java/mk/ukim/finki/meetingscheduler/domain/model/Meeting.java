@@ -18,7 +18,7 @@ public class Meeting extends BaseEntity<MeetingId> {
     @Embedded
     private TimeSlot timeSlot;
 
-    @ManyToMany(cascade = CascadeType.REMOVE)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Person> personList;
 
     protected Meeting() { super(MeetingId.randomId(MeetingId.class)); }
